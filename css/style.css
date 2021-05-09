@@ -4,15 +4,20 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Rubik:700&display=swap');
 
 /* Custom Properties, update these for your own design
   Using as the general variables for the whole css */
 
-:root {
+ :root {
     --ff-primary: 'Source Sans Pro', sans-serif;
     --ff-secondary: 'Source Code Pro', monospace;
     --fw-reg: 300;
     --fw-bold: 900;
+    /* --ff-primary: 'Lora', serif;
+    --ff-secondary: 'Roboto Slab', serif;
+    --fw-reg: 400;
+    --fw-bold: 700; */
     --clr-light: #fff;
     --clr-dark: #303030;
     --clr-accent: #16e0bd;
@@ -22,6 +27,7 @@
     --fs-body: 1rem;
     /* box shadow */
     --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25), 0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
+    /* source code button */
 }
 
 @media (min-width: 800px) {
@@ -35,6 +41,10 @@
 
 
 /* General styles */
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background: var(--clr-light);
@@ -58,9 +68,14 @@ section {
     padding: 5em 2em;
 }
 
-:focus {
+ :focus {
     outline: 3px solid var(--clr-accent);
     outline-offset: 3px;
+}
+
+video {
+    width: 100%;
+    height: auto;
 }
 
 
@@ -133,11 +148,133 @@ h3 {
 }
 
 
-/* Intro Section */
+/* Nav Header */
 
-nav {
-    display: none;
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
 }
+
+.logo {
+    max-width: 100px;
+}
+
+
+/* Styling for nav-bar (drop-down list) */
+
+.nav {
+    position: fixed;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    /* Use justify-content to set up the space between stuffs */
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.nav__link:hover {
+    color: var(--clr-accent);
+}
+
+
+/* Styling the hamburger button */
+
+.nav-toggle {
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    /* Set the hand icon when hover onto the button */
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+
+/* To open and close the nav when clicking on */
+
+.nav-open .nav {
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+
+/* Make the nav turn around when clicking on */
+
+.nav-open .hamburger {
+    background: var(--clr-accent);
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before {
+    background: var(--clr-accent);
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    background: #303030;
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.hamburger::before {
+    top: 6px;
+}
+
+.hamburger::after {
+    bottom: 6px;
+}
+
+
+/* Intro Section */
 
 .intro {
     position: relative;
@@ -217,11 +354,211 @@ nav {
     .services {
         display: flex;
         max-width: 1300px;
-        margin-left: auto;
+        margin-left: 17em;
         margin-right: auto;
         padding-right: 5em;
     }
     .service+.service {
-        margin-left: 2em;
+        margin-left: 3em;
+    }
+}
+
+
+/* About me section */
+
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me__img {
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: "title img" "subtitle img" "text img";
+        grid-column-gap: 2em;
+    }
+    .section__title--about {
+        grid-area: title;
+    }
+    .section__subtitle--about {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200px + 2em);
+    }
+    .about-me__img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+
+/* My Projects */
+
+.my-work {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__subtitle--work {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+
+.portfolio {
+    display: grid;
+    /* Set grid for images, auto-fit the size of the screen */
+    /* Set the max size of the image in minmax method */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.portfolio__item {
+    background: var(--clr-accent);
+    overflow: hidden;
+}
+
+.portfolio__img {
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1), opacity 250ms linear;
+}
+
+.portfolio__item:focus {
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio__img:hover,
+.portfolio__item:focus .portfolio__img {
+    transform: scale(1.2);
+    opacity: .75;
+}
+
+
+/* Footer */
+
+.footer {
+    background: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0;
+}
+
+.footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer__link {
+    font-size: 1.45rem;
+    font-weight: var(--fw-bold);
+}
+
+.footer__link:hover,
+.social-list__link:hover {
+    /* Bold black on the icons a bit when hovering into */
+    opacity: .7;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+    font-size: var(--fs-h3);
+}
+
+.social-list__item {
+    margin: 0 .78em;
+}
+
+.social-list__link {
+    padding: .5em;
+}
+
+
+/* Each individual portfolio item */
+
+.portfolio-item-individual {
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio-item-individual__img {
+    max-width: 1000px;
+    padding: 0 2em 2em;
+    margin: 0 auto;
+    box-shadow: var(--bs);
+}
+
+a.button1 {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid black;
+    margin: -1em 20em 0.3em 48em;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: black;
+    text-align: center;
+    transition: all 0.2s;
+    position: relative;
+}
+
+a.button1:hover {
+    color: #16e0bd;
+    background-color: black;
+}
+
+@media all and (max-width:30em) {
+    a.button1 {
+        display: block;
+        margin: 0.4em auto;
+    }
+}
+
+.bouncy {
+    animation: bouncy 5s infinite linear;
+    position: relative;
+}
+
+@keyframes bouncy {
+    0% {
+        top: 0em
+    }
+    40% {
+        top: 0em
+    }
+    43% {
+        top: -0.9em
+    }
+    46% {
+        top: 0em
+    }
+    48% {
+        top: -0.4em
+    }
+    50% {
+        top: 0em
+    }
+    100% {
+        top: 0em;
     }
 }

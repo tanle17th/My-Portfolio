@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tan Le Portfolio Website</title>
+    <title>Tan Le's Portfolio</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
 
+    <!-- Update based on the own font designs -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab:400,700&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
@@ -27,16 +29,16 @@
         <nav class="nav">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a href="#home" class="nav__link"></a>
+                    <a href="index.html#home" class="nav__link">Home</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#services" class="nav__link"></a>
+                    <a href="index.html#services" class="nav__link">What I do</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#about" about class="nav__link"></a>
+                    <a href="index.html#about" about class="nav__link">About me</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#work" class="nav__link"></a>
+                    <a href="index.html#work" class="nav__link">My projects</a>
                 </li>
             </ul>
         </nav>
@@ -47,8 +49,8 @@
         <h1 class="section__title section__title--intro">
             Hi, I am <strong>Tan Le</strong>
         </h1>
-        <p class="section__subtitle section__subtitle--intro">full-stack dev</p>
-        <img src="img/avatar.jpg" alt="" class="intro__img">
+        <p class="section__subtitle section__subtitle--intro">web developer</p>
+        <img src="img/2.jpg" alt="" class="intro__img">
     </section>
 
     <!-- What I do-->
@@ -57,20 +59,23 @@
         <div class="services">
             <div class="service">
                 <h3>Web Development</h3>
-                <p>Lorem Ipsum is simply dummy text of the Lorem lso the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-                    with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Having experience in many different languages and web frameworks. Significant ones are <strong>PHP - Laravel, Python - Django, JavaScript, NodeJS</strong>. My responsibilities includes writing well designed, testable, efficient code by
+                    using best software development practices, creating website layout/user interfaces by using standard HTML/CSS practices, integrating data from various back-end services and databases.
+                </p>
             </div>
 
             <div class="service">
                 <h3>Full-stack Development</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                    ' their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                <p>The primary responsibility includes designing user interactions on websites, developing servers and databases for website functionality and coding for mobile platforms. I am suitable for the full-stack position due to my knowledge of many
+                    different languages and frameworks/api. Front-end: HTML/CSS, Bootstrap, JavaScript. Back-end: Python, PHP, Java. DBMS: MySQL, PostgreSQL, MongoDB. Frameworks: Django, Laravel, Bootstrap
+                </p>
             </div>
 
             <div class="service">
                 <h3>System Design and Testing</h3>
-                <p>"Lorem ipsum dolor sit amet, at. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                    laborum."</p>
+                <p>Designing and Testing software/website. I have created many system design on my own for both personal projects and school projects. My responsibility is to stimulate the system, manage how the system should react and respond to the stimuli.
+                    Working on design the whole system, contribute ideas to make a better website for both visual components (on client side), and back-end stuffs in the background.
+                </p>
             </div>
         </div>
 
@@ -81,49 +86,74 @@
     <!-- About me -->
     <section class="about-me" id="about">
         <h2 class="section__title section__title--about">Who I am</h2>
-        <p class="section__subtitle section__subtitle--about">Designer & Developer</p>
+        <p class="section__subtitle section__subtitle--about">Developer & Designer</p>
 
         <div class="about-me__body">
-            <p></p>
+            <p>I am a post-graduate student from Algonquin College. I successfully completed the 2-year academic Computer Programmer program with the final grade of 3.82, Graduated with Honours.
+                <li>Strong and thorough knowledge of Python with Django, PHP with Laravel, Java, JavaScript, HTML5, CSS,Bootstrap, SQL, GitHub.</li>
+                <li>Being experienced with testing, debugging system, implementing data structures and designing.</li>
+                <li>Willing to learn new stuffs, be comfortable and patient to deal with unexpected changes in any environment andsituation.</li>
+                <li>Staying organized to keep track of tasks, deadlines, always being punctual and having ability to work independently.</li>
+            </p>
         </div>
 
-        <img src="img/avatar.jpg" alt="One picture of myself">
+        <img src="img/1.jpg" alt="One picture of myself" class="about-me__img">
     </section>
 
 
     <!-- My work -->
     <section class="my-work" id="work">
-        <h2 class="section__title">My projects</h2>
-        <p class="section__subtitle"></p>
+        <h2 class="section__title section__title--work">My projects</h2>
+        <p class="section__subtitle section__subtitle--work">A selection of all projects I work on during College and my own time.
+        </p>
 
         <div class="portfolio">
             <!-- Portfolio item 1 -->
-            <a href="#" class="portfolio__item">
-                <img src="" alt="">
+            <a href="portfolio-item-1.html" class="portfolio__item">
+                <img src="img/item-1.png" alt="" class="portfolio__img">
             </a>
 
             <!-- Portfolio item 2 -->
-            <a href="#" class="portfolio__item">
-                <img src="" alt="">
+            <a href="index.html#home" class="portfolio__item">
+                <img src="img/item-2.png" alt="" class="portfolio__img">
             </a>
 
             <!-- Portfolio item 3 -->
-            <a href="#" class="portfolio__item">
-                <img src="" alt="">
+            <a href="portfolio-item-3.html" class="portfolio__item">
+                <img src="img/item-3.png" alt="" class="portfolio__img">
             </a>
 
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <a href="mailto:phtan.lee@gmail.com" class="footer-link">phtan.lee@gmail.com</a>
+    <footer class="footer">
+        <a href="mailto:phtan.lee@gmail.com" class="footer__link">phtan.lee@gmail.com</a>
         <ul class="social-list">
-            <li class="social-list__item"><a href="" class="social-list__link">a</a></li>
-            <li class="social-list__item"><a href="" class="social-list__link">b</a></li>
-            <li class="social-list__item"><a href="" class="social-list__link">c</a></li>
+            <li class="social-list__item">
+                <a href="https://github.com/VanPhucTanLe" class="social-list__link">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <li class="social-list__item">
+                    <a href="https://www.linkedin.com/in/tan-le-296b001a0/" class="social-list__link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a href="https://www.facebook.com/phuctan1712/" class="social-list__link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a href="https://www.instagram.com/29_tanphuc/" class="social-list__link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
         </ul>
     </footer>
+
+    <script src="js/index.js"></script>
 
 </body>
 
