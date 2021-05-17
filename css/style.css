@@ -493,18 +493,51 @@ header {
 
 /* Each individual portfolio item */
 
+
+/* Set width/height directly in the item in html and set 
+width/height 100% in css to make it responsive*/
+
 .portfolio-item-individual {
     padding: 0 2em 2em;
     max-width: 1000px;
     margin: 0 auto;
 }
 
+.portfolio-item-individual p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .portfolio-item-individual__img {
-    max-width: 1000px;
-    padding: 0 2em 2em;
-    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
     box-shadow: var(--bs);
 }
+
+
+/* Make the iframe video responsive */
+
+.container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Make the iframe video responsive */
 
 a.button1 {
     display: inline-block;
